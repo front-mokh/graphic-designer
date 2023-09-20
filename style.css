@@ -82,7 +82,7 @@ ol {
 
   --fs-100: 0.8rem;
   --fs-200: 0.9rem;
-  --fs-300: 1.2rem;
+  --fs-300: 1rem;
   --fs-400: 1.1rem;
 
   --fw-thin: 400;
@@ -202,23 +202,21 @@ body {
 
 /*About Section*/
 .about {
-  padding-top: 1.75rem;
+  padding-top: 1.5rem;
   padding-inline: 1rem;
   background-color: var(--clr-bg);
 }
 .about-text {
   font-family: var(--ff-accent);
   font-size: var(--fs-300);
-  line-height: 1.81;
-  margin-top: 1.5rem;
+  line-height: 1.8;
 }
 
 .about .title {
   font-family: var(--ff-accent);
   font-size: var(--fs-300);
   font-weight: var(--fw-bold);
-  padding-inline: 0.5rem
-  margin-bottom: 0.15rem;
+  padding-block: 0.5rem
   border-bottom: 1.5px solid var(--clr-text);
 }
 
