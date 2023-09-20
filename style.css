@@ -117,7 +117,6 @@ body {
   align-items: center;
 
   padding-block: 0.5rem;
-  border-bottom: 1.5px solid var(--clr-text);
 }
 
 .nav-header .title {
@@ -205,6 +204,7 @@ body {
 .about {
   margin-top: 2rem;
   padding-inline: 1rem;
+  background-color: var(--clr-bg);
 }
 .about-text {
   font-family: var(--ff-accent);
@@ -218,14 +218,13 @@ body {
   font-size: var(--fs-200);
   font-weight: var(--fw-bold);
   margin-bottom: 0.15rem;
+  border-bottom: 1.5px solid var(--clr-text);
 }
 
 .about-infos {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  flex-direction: column;
   margin-top: 2rem;
-  gap: 1rem;
+  gap: 0.5rem;
 }
 @media (min-width: 60rem) {
   :root {
