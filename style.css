@@ -172,6 +172,9 @@ body {
   font-family: var(--ff-primary);
 }
 
+.mission{
+  display: none;
+}
 .view{
     text-decoration: underline;
 }
@@ -255,6 +258,10 @@ body {
     height: 100vh;
     flex-basis: 140%;
   }
+
+  .mission{
+  display: block;
+}
   /* Get In Touch Section*/
 
   .get-in-touch {
