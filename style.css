@@ -83,8 +83,9 @@ ol {
   --fs-100: 0.8rem;
   --fs-200: 0.9rem;
   --fs-300: 1.2rem;
-  --fs-400: 1.3rem;
+  --fs-400: 1.1rem;
 
+  --fw-thin: 400;
   --fw-regular: 500;
   --fw-bold: 600;
 }
@@ -138,7 +139,7 @@ body {
 
 .project-image-wrapper {
   width: 100%;
-  aspect-ratio: 1.6;
+  aspect-ratio: 1.2;
   overflow: hidden;
   flex-basis: 110%;
 }
@@ -151,7 +152,7 @@ body {
 }
 
 .project-details {
-  padding: 2.5rem 1.5rem;
+  padding: 2.5rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -159,9 +160,11 @@ body {
 .project-title {
   font-family: var(--ff-accent);
   font-size: var(--fs-400);
+  font-weight: var(--fs-thin);
   text-align: center;
+  text-transform: uppercase;
 
-  margin-inline: 2.5rem;
+  margin-inline: 1rem;
   margin-bottom: 2.5rem;
 }
 
