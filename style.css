@@ -80,7 +80,7 @@ ol {
   --ff-accent: "Mauren", serif;
   --ff-primary: "Montserrat", sans-serif;
 
-  --fs-100: 0.8rem;
+  --fs-100: 0.85rem;
   --fs-200: 0.9rem;
   --fs-300: 1.1rem;
   --fs-400: 1.15rem;
@@ -164,7 +164,7 @@ body {
   text-transform: uppercase;
 
   margin-inline: 0.5rem;
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rrem;
 }
 
 .brand {
