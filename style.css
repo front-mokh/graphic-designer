@@ -206,13 +206,13 @@ body {
 }
 .about-text {
   font-family: var(--ff-accent);
-  font-size: var(--fs-400);
-  line-height: 1.81;
+  font-size: var(--fs-300);
+  line-height: 1.7;
 }
 
 .about .title {
   font-family: var(--ff-accent);
-  font-size: var(--fs-300);
+  font-size: var(--fs-200);
   font-weight: var(--fw-bold);
   margin-bottom: 0.15rem;
 }
