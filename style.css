@@ -84,11 +84,11 @@ ol {
   --fs-200: 0.9rem;
   --fs-300: 1.1rem;
   --fs-400: 1.15rem;
-  --fs-500: 1.3rem;
+  --fs-500: 1.2rem;
 
   --fw-thin: 400;
   --fw-regular: 400;
-  --fw-bold: 600;
+  --fw-bold: 500;
 }
 
 /**/
@@ -216,9 +216,9 @@ body {
 
 .about .title {
   font-family: var(--ff-accent);
-  font-size: var(--fs-300);
+  font-size: var(--fs-200);
   font-weight: var(--fw-bold);
-  padding-block: 0.35rem;
+  padding-bottom: 0.45rem;
   border-bottom: 1.5px solid var(--clr-text);
   line-height: 1;
 }
