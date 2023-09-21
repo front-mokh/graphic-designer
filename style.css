@@ -200,7 +200,7 @@ body {
 
 /*About Section*/
 .about {
-  margin-top: 2rem;
+  padding-top: 1.5rem;
   padding-inline: 1rem;
   background-color: var(--clr-bg);
 }
@@ -212,7 +212,7 @@ body {
 
 .about .title {
   font-family: var(--ff-accent);
-  font-size: var(--fs-200);
+  font-size: var(--fs-300);
   font-weight: var(--fw-bold);
   margin-bottom: 0.15rem;
 }
