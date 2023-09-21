@@ -229,9 +229,7 @@ body {
   gap: 0.5rem;
 }
 
-.list{
-  display: none;
-}
+
 @media (min-width: 60rem) {
   :root {
     --fs-100: 0.9rem;
