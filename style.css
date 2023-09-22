@@ -169,19 +169,11 @@ body {
 
 .project-wrapper {
   height: 100vh;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
+  display: grid;
 }
 
 .slide-container {
-  position: relative;
   overflow: hidden;
-  width: 100%;
-}
-.project-image-wrapper {
-  width: 100%;
-  height: 104vh;
 }
 
 .project-image-wrapper img {
