@@ -181,6 +181,7 @@ body {
   padding-inline: 1rem;
   padding-top: 2rem;
   padding-bottom: 3rem;
+  background-color: var(--clr-bg);
 }
 
 .get-in-touch-title {
@@ -291,7 +292,6 @@ body {
 
   .get-in-touch {
     flex-direction: row;
-    background-color: var(--clr-bg);
   }
 
   /*About Section*/
