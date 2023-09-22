@@ -114,7 +114,7 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding-block: 0.6rem;
+  padding-block: 0.5rem;
 }
 
 .nav-header .title {
@@ -191,7 +191,7 @@ body {
 }
 
 .get-in-touch .text-wrapper {
-  font-size: var(--fs-200);
+  font-size: var(--fs-300);
   text-align: center;
 }
 
@@ -215,15 +215,37 @@ body {
   line-height: 1.7;
 }
 
-.about .title {
+.list-title {
   font-family: var(--ff-accent);
   font-size: var(--fs-200);
   font-weight: var(--fw-bold);
-  margin-bottom: 0.15rem;
+  line-height: 0;
 }
 
 .about-infos {
   margin-top: 2rem;
+  display: grid;
+}
+
+.info-block {
+  padding-block: 1rem;
+  border-bottom: 1.5px solid var(--clr-text);
+  display: grid;
+  gap: 1rem;
+}
+
+.open {
+  max-height: 700px !important;
+  display: block !important;
+}
+.list-container {
+  max-height: 0;
+  display: none;
+  overflow: hidden;
+  transition: all 1s ease-in-out;
+}
+
+.info-block .list {
 }
 
 /*footer*/
