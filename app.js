@@ -73,23 +73,7 @@ var slides = document.querySelectorAll(".slide-container");
 let mm = gsap.matchMedia();
 slides.forEach((slide, i) => {
   let imageWrapper = slide.querySelector(".project-image-wrapper");
-  mm.add("(max-width: 60rem)", () => {
-    gsap.fromTo(
-      imageWrapper,
-      {
-        y: "-2vh",
-      },
-      {
-        y: "2vh",
-        scrollTrigger: {
-          trigger: slide,
-          scrub: true,
-          start: "top bottom",
-        },
-        ease: "none",
-      }
-    );
-  });
+
   mm.add("(min-width: 60rem)", () => {
     gsap.fromTo(
       imageWrapper,
