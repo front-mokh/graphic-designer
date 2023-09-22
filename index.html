@@ -10,25 +10,30 @@
     <link rel="stylesheet" href="style.css">
 
     <!--Including app.js-->
-    <script src="app.js"></script>
+    <script defer src="app.js"></script>
 
     <!--Including Gsap-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
 
 
 </head>
 
 <body>
+
     <header class="nav-header">
         <a href="about.html" class="title">Kevin Parker</a>
     </header>
     <div class="container">
         <section class="featured-projects">
             <div class="project-wrapper">
-                <div class="project-image-wrapper">
-                    <img src="https://lottanieminencom-6592.kxcdn.com/media/pages/index/eadem/1e12a9ca36-1635089783/eadem-thumbnail-02-864x.jpg" alt="">
+                <div class="slide-container">
+                    <div class="project-image-wrapper">
+                        <div class="project-image-overlay" style="background-color: hsl(3, 70%, 62%, 0.8);"></div>
+                        <img src="https://lottanieminencom-6592.kxcdn.com/media/pages/index/eadem/1e12a9ca36-1635089783/eadem-thumbnail-02-864x.jpg"
+                            alt="">
+                    </div>
                 </div>
                 <div class="project-details-wrapper">
                     <h2 class="project-title">A SKINCARE BRAND FOR
@@ -44,8 +49,12 @@
                 </div>
             </div>
             <div class="project-wrapper reverse">
-                <div class="project-image-wrapper">
-                    <img src="https://lottanieminencom-6592.kxcdn.com/media/pages/index/moda-operandi/7804ee8cd3-1635089783/moda-26-864x.jpg" alt="">
+                <div class="slide-container">
+                    <div class="project-image-wrapper">
+                        <div class="project-image-overlay" style="background-color: hsl(40, 52%, 24%, 0.8);"></div>
+                        <img src="https://lottanieminencom-6592.kxcdn.com/media/pages/index/moda-operandi/7804ee8cd3-1635089783/moda-26-864x.jpg"
+                            alt="">
+                    </div>
                 </div>
                 <div class="project-details-wrapper">
                     <h2 class="project-title">A NEW VISUAL IDENTITY
@@ -62,9 +71,14 @@
                 </div>
             </div>
             <div class="project-wrapper">
-                <div class="project-image-wrapper">
-                    <img src="https://lottanieminencom-6592.kxcdn.com/media/pages/index/steen-strom/20e8e508fa-1635089783/steenstrom-thumbnail-2-864x.jpg" alt="">
+                <div class="slide-container">
+                    <div class="project-image-wrapper">
+                        <div class="project-image-overlay" style="background-color: hsl(40, 9%, 60%, 0.8);"></div>
+                        <img src="https://lottanieminencom-6592.kxcdn.com/media/pages/index/steen-strom/20e8e508fa-1635089783/steenstrom-thumbnail-2-864x.jpg"
+                            alt="">
+                    </div>
                 </div>
+
                 <div class="project-details-wrapper">
                     <h2 class="project-title">A NEW CHAPTER FOR
 
@@ -80,8 +94,12 @@
                 </div>
             </div>
             <div class="project-wrapper reverse">
-                <div class="project-image-wrapper">
-                    <img src="https://lottanieminencom-6592.kxcdn.com/media/pages/index/maison-d-etto/9f1186e277-1635089783/mde-01-864x.jpg" alt="">
+                <div class="slide-container">
+                    <div class="project-image-wrapper">
+                        <div class="project-image-overlay" style="background-color: hsl(138, 46%, 7%, 0.65)"></div>
+                        <img src="https://lottanieminencom-6592.kxcdn.com/media/pages/index/maison-d-etto/9f1186e277-1635089783/mde-01-864x.jpg"
+                            alt="">
+                    </div>
                 </div>
                 <div class="project-details-wrapper">
                     <h2 class="project-title">ARCHITECTURE AND
@@ -110,6 +128,8 @@
     <footer class="footer">
         <p>©2023 KEVIN PARKER</p>
     </footer>
+    <div class="cursor"></div>
+    <div class="cursor-inner"></div>
 </body>
 
 </html>
