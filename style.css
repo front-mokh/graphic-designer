@@ -147,12 +147,13 @@ body {
   object-fit: cover;
 }
 
-.project-details {
+.project-details-wrapper {
   padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+
 .project-title {
   font-family: var(--ff-accent);
   font-size: var(--fs-400);
@@ -160,7 +161,7 @@ body {
   text-transform: uppercase;
 
   margin-inline: 0.5rem;
-  margin-bottom: 1.75rem;
+  margin-bottom: 2rem;
 }
 
 .brand {
@@ -168,29 +169,30 @@ body {
   font-family: var(--ff-primary);
 }
 
-.mission{
+.mission {
   display: none;
 }
 
-.view{
-    text-decoration: underline;
+.view {
+  text-decoration: underline;
 }
 
 .get-in-touch {
-  display: flex;
-  flex-direction: column;
-  gap: 3rem;
-
-  justify-content: space-between;
-
   padding-inline: 1rem;
   padding-top: 2rem;
-  padding-bottom: 4rem;
+  padding-bottom: 3rem;
+}
+
+.get-in-touch-title {
+  font-family: var(--ff-accent);
+  font-size: var(--fs-400);
+  text-align: center;
+  margin-top: 1rem;
 }
 
 .get-in-touch .text-wrapper {
-  max-width: 40ch;
   font-size: var(--fs-200);
+  text-align: center;
 }
 
 .get-in-touch .link {
@@ -203,6 +205,9 @@ body {
   padding-top: 1.5rem;
   padding-inline: 1rem;
   background-color: var(--clr-bg);
+}
+.about .text-wrapper > * + * {
+  margin-top: 1rem;
 }
 .about-text {
   font-family: var(--ff-accent);
@@ -218,11 +223,15 @@ body {
 }
 
 .about-infos {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  flex-direction: column;
   margin-top: 2rem;
-  gap: 1rem;
+}
+
+/*footer*/
+.footer {
+  padding: 0.5rem 1rem;
+  display: grid;
+  place-content: center;
+  border-top: 1.5px solid var(--clr-text);
 }
 @media (min-width: 60rem) {
   :root {
@@ -240,19 +249,21 @@ body {
     flex-direction: row-reverse;
   }
 
-  .project-details {
+  .project-details-wrapper {
     padding: 2.5rem 2.5rem;
   }
 
   .project-title {
     margin-top: 4rem;
     margin-inline: 1.5rem;
-    
   }
 
   .project-image-wrapper {
     height: 100vh;
-    flex-basis: 140%;
+    flex-basis: 120%;
+  }
+  .project-details-wrapper {
+    flex-basis: 100%;
   }
   /* Get In Touch Section*/
 
