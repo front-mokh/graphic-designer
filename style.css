@@ -188,12 +188,13 @@ body {
   font-family: var(--ff-accent);
   font-size: var(--fs-400);
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .get-in-touch .text-wrapper {
   font-size: var(--fs-300);
   text-align: center;
+  margin-top: 0.5rem;
 }
 
 .get-in-touch .link {
@@ -203,7 +204,7 @@ body {
 
 .get-in-touch .icon-wrapper {
   height: 1rem;
-  width: 6rem;
+  width: 7rem;
   margin-inline: auto;
   background-image: url(assets/icons/vintage.png);
   background-size: cover;
