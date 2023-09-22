@@ -217,7 +217,7 @@ body {
 
 .list-title {
   font-family: var(--ff-accent);
-  font-size: var(--fs-200);
+  font-size: var(--fs-300);
   font-weight: var(--fw-bold);
   line-height: 0;
 }
@@ -228,7 +228,7 @@ body {
 }
 
 .info-block {
-  padding-block: 1rem;
+  padding-block: 1.25rem;
   border-bottom: 1.5px solid var(--clr-text);
   display: grid;
   gap: 1rem;
