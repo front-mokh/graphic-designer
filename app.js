@@ -70,32 +70,43 @@ projectImageWrapper.forEach((item) => {
 
 //Slide Container (Parllax Shit)
 var slides = document.querySelectorAll(".slide-container");
-
+let mm = gsap.matchMedia();
 slides.forEach((slide, i) => {
   let imageWrapper = slide.querySelector(".project-image-wrapper");
-
-  let mm = gsap.matchMedia();
-
-  gsap.fromTo(
-    imageWrapper,
-    {
-      y: "-10vh",
-    },
-    {
-      y: "10vh",
-      scrollTrigger: {
-        trigger: slide,
-        scrub: true,
-        start: "top bottom",
-        snap: {
-          snapTo: 0.5,
-          duration: 0.5,
-          ease: "power4.inOut",
-        },
+  mm.add("(max-width: 60rem)", () => {
+    gsap.fromTo(
+      imageWrapper,
+      {
+        y: "-2vh",
       },
-      ease: "none",
-    }
-  );
+      {
+        y: "2vh",
+        scrollTrigger: {
+          trigger: slide,
+          scrub: true,
+          start: "top bottom",
+        },
+        ease: "none",
+      }
+    );
+  });
+  mm.add("(min-width: 60rem)", () => {
+    gsap.fromTo(
+      imageWrapper,
+      {
+        y: "-10vh",
+      },
+      {
+        y: "10vh",
+        scrollTrigger: {
+          trigger: slide,
+          scrub: true,
+          start: "top bottom",
+        },
+        ease: "none",
+      }
+    );
+  });
 });
 //Dropdown Lists
 var blocks = document.querySelectorAll(".info-block");
