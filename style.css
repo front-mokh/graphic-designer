@@ -188,7 +188,6 @@ body {
   font-family: var(--ff-accent);
   font-size: var(--fs-400);
   text-align: center;
-  margin-top: 1rem;
 }
 
 .get-in-touch .text-wrapper {
@@ -201,6 +200,15 @@ body {
   font-weight: var(--fw-bold);
 }
 
+.get-in-touch .icon-wrapper {
+  height: 1rem;
+  width: 6rem;
+  margin-inline: auto;
+  background-image: url(assets/icons/vintage.png);
+  background-size: cover;
+  background-position: center;
+  
+}
 /*About Section*/
 .about {
   padding-top: 1.5rem;
