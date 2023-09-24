@@ -13,6 +13,8 @@
 body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+  cursor: none;
+  overflow-x: hidden;
 }
 
 img,
@@ -84,6 +86,7 @@ ol {
   place-content: center;
   font-size: var(--fs-200);
   transition: padding 0.2s;
+  z-index: 9999;
 }
 
 .cursor-inner {
@@ -96,6 +99,7 @@ ol {
   transform: translate(-50%, -50%);
   pointer-events: none;
   transition: width 0.3s, height 0.3s, opacity 0.3s;
+  z-index: 9999;
 }
 
 .hover {
@@ -112,7 +116,7 @@ ol {
 :root {
   --clr-body: hsl(0, 0%, 100%);
 
-  --clr-bg: hsl(50, 18%, 96%);
+  --clr-bg: hsl(50, 18%, 87%);
   --clr-text: hsl(0, 0%, 20%);
 
   --ff-accent: "Mauren", serif;
@@ -147,6 +151,13 @@ body {
   justify-content: space-between;
   align-items: last baseline;
 }
+.line {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
 /*Navigation Header*/
 .nav-header {
   display: flex;
@@ -159,6 +170,60 @@ body {
 .nav-header .title {
   font-family: var(--ff-accent);
   font-size: 1.4rem;
+}
+
+.menu {
+  position: fixed;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--clr-bg);
+  z-index: 2;
+  transform: translateX(100%);
+  padding: 3rem 4rem;
+}
+
+.menu-slide {
+  position: absolute;
+  right: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: var(--clr-body);
+  transform: translateX(100%);
+  z-index: 1;
+}
+
+.menu-button {
+  position: absolute;
+  right: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: end;
+  gap: 6px;
+  z-index: 100;
+}
+
+.bar {
+  width: 2rem;
+  height: 2px;
+  background-color: var(--clr-text);
+  transform-origin: center;
+}
+
+.menu .nav-links {
+  padding: 0;
+  list-style: none;
+  font-size: 8rem;
+  font-family: var(--ff-accent);
+  text-transform: uppercase;
+  display: grid;
+}
+
+.nav-links > li{
+  display: block;
+  opacity: 0;
+  transform: translateX(30px);
 }
 
 /* Featured Projects Section*/
@@ -200,16 +265,33 @@ body {
 }
 
 .brand {
+  display: block;
   text-transform: uppercase;
   font-family: var(--ff-primary);
+  font-weight: var(--fw-bold);
+  color: var(--clr-body);
+  font-size: 5rem;
+  text-align: center;
+  margin-bottom: 10rem;
+  opacity: 0;
+  transform: scale(0.98);
 }
 
 .mission {
-  display: none;
+  text-transform: uppercase;
 }
 
 .view {
-  text-decoration: underline;
+  position: relative;
+  display: inline-flex;
+  gap: 0.5rem;
+}
+.view::after {
+  content: "";
+  background-image: url(assets/icons/right-arrow.png);
+  background-size: cover;
+  background-position: center;
+  width: 1.5rem;
 }
 
 .get-in-touch {
@@ -302,11 +384,17 @@ body {
 }
 @media (min-width: 60rem) {
   :root {
-    --fs-100: 0.9rem;
+    --fs-100: 1rem;
     --fs-200: 1rem;
     --fs-300: 1.3rem;
     --fs-400: 2rem;
   }
+
+  .nav-header .title {
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+
   /* Featured Projects Section*/
   .project-wrapper {
     overflow: hidden;
@@ -347,6 +435,8 @@ body {
     height: 0;
     background-color: rgba(0, 0, 0, 0.1);
     bottom: 0;
+    display: grid;
+    place-content: center;
   }
   .project-details-wrapper {
     flex: 1;

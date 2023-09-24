@@ -1,70 +1,138 @@
 gsap.registerPlugin(ScrollTrigger);
-//Custom Cursor
 
-var cursor = document.querySelector(".cursor");
-var cursorinner = document.querySelector(".cursor-inner");
-var a = document.querySelectorAll("a");
-var projectImageWrapper = document.querySelectorAll(".project-image-wrapper");
+//menuButton
 
-document.addEventListener("mousemove", function (e) {
-  var x = e.clientX;
-  var y = e.clientY;
-  cursor.style.transform = `translate3d(calc(${e.clientX}px - 50%), calc(${e.clientY}px - 50%), 0)`;
-});
+var menuButton = document.querySelector(".menu-button");
+var topBar = menuButton.querySelector(".bar:nth-child(1)");
+var midBar = menuButton.querySelector(".bar:nth-child(2)");
+var bottomBar = menuButton.querySelector(".bar:nth-child(3)");
 
-document.addEventListener("mousemove", function (e) {
-  var x = e.clientX;
-  var y = e.clientY;
-  cursorinner.style.left = x + "px";
-  cursorinner.style.top = y + "px";
-});
+var menu = document.querySelector(".menu");
+var menuSlide = document.querySelector(".menu-slide");
 
-document.addEventListener("mousedown", function () {
-  cursor.classList.add("click");
-  cursorinner.classList.add("cursorinnerhover");
-});
-
-document.addEventListener("mouseup", function () {
-  cursor.classList.remove("click");
-  cursorinner.classList.remove("cursorinnerhover");
-});
-
-a.forEach((item) => {
-  item.addEventListener("mouseover", () => {
-    cursor.classList.add("hover");
-  });
-  item.addEventListener("mouseleave", () => {
-    cursor.classList.remove("hover");
-  });
-});
-projectImageWrapper.forEach((item) => {
-  item.addEventListener("mouseover", () => {
-    cursor.innerHTML = "<p>View</p>";
-    cursor.style.padding = "1.5rem";
-    cursor.classList.add("hover");
-  });
-  item.addEventListener("mouseleave", () => {
-    cursor.innerHTML = "";
-    cursor.style.padding = "0";
-    cursor.classList.remove("hover");
-  });
+menuButton.addEventListener("click", function () {
+  var isOpen = menu.getAttribute("data-open") == "true";
+  if (!isOpen) {
+    menu.setAttribute("data-open", true);
+    gsap
+      .timeline({
+        ease: "power4.in",
+      })
+      .to(midBar, 0.3, {
+        width: 0,
+      })
+      .to(
+        topBar,
+        0.3,
+        {
+          rotate: 45,
+          y: 8,
+        },
+        "same-time"
+      )
+      .to(
+        bottomBar,
+        0.3,
+        {
+          rotate: -45,
+          y: -8,
+        },
+        "same-time"
+      )
+      .to(menuSlide, {
+        x: 0,
+      })
+      .to(menu, {
+        x: 0,
+      })
+      .staggerTo(
+        ".nav-links li",
+        1,
+        {
+          opacity: 1,
+          x: 0,
+          scale: 1,
+        },
+        0.2
+      );
+  } else {
+    menu.setAttribute("data-open", false);
+    gsap
+      .timeline({
+        ease: "power4.out",
+      })
+      .staggerTo(
+        ".nav-links li",
+        0.6,
+        {
+          opacity: 0,
+          x: 30
+          
+        },
+        0.2
+      )
+      .to(menu, {
+        x: "100%",
+      })
+      .to(menuSlide, {
+        x: "100%",
+      })
+      .to(
+        topBar,
+        0.3,
+        {
+          rotate: 0,
+          y: 0,
+        },
+        "same-time"
+      )
+      .to(
+        bottomBar,
+        0.3,
+        {
+          rotate: 0,
+          y: 0,
+        },
+        "same-time"
+      )
+      .to(midBar, 0.3, {
+        width: "2rem",
+      });
+  }
 });
 
 //Project Image Overlay
+var projectImageWrapper = document.querySelectorAll(".project-image-wrapper");
 
 projectImageWrapper.forEach((item) => {
   let overlay = item.querySelector(".project-image-overlay");
   item.addEventListener("mouseenter", () => {
-    gsap.to(overlay, 0.4, {
-      height: "100%",
-      ease: "power4.in",
-    });
+    gsap
+      .timeline()
+      .to(overlay, 0.4, {
+        height: "100%",
+        ease: "power4.in",
+      })
+      .to(overlay.querySelector(".brand"), 0.4, {
+        opacity: 1,
+        scale: 1,
+        y: 5,
+        ease: "power4.in",
+      });
   });
   item.addEventListener("mouseleave", () => {
-    gsap.to(overlay, 0.4, {
-      height: "0",
-      ease: "power4.out",
-    });
+    gsap
+      .timeline()
+      .to(overlay.querySelector(".brand"), 0.4, {
+        opacity: 0,
+        scale: 0.98,
+        y: 0,
+        ease: "power4.out",
+      })
+      .to(overlay, 0.2, {
+        height: "0",
+        ease: "power4.in",
+      });
   });
 });
 
@@ -92,6 +160,49 @@ slides.forEach((slide, i) => {
     );
   });
 });
+
+//Title Slide In
+
+let titles = document.querySelectorAll(".project-title");
+let results = Splitting({ target: titles, by: "lines" });
+
+results.forEach((splitResult) => {
+  const wrappedLines = splitResult.lines
+    .map(
+      (wordsArr) => `
+        <span class="line"><div class="words">
+          ${wordsArr
+            .map(
+              (word) => `${word.outerHTML}<span class="whitespace"> 
+         </span>`
+            )
+            .join("")}
+        </div></span>`
+    )
+    .join("");
+  splitResult.el.innerHTML = wrappedLines;
+});
+
+gsap.registerPlugin(ScrollTrigger);
+let revealLines = titles.forEach((element) => {
+  const lines = element.querySelectorAll(".line .words");
+
+  let tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: element,
+      toggleActions: "restart none none reset",
+      start: "top bottom",
+    },
+  });
+  tl.set(titles, { autoAlpha: 1 });
+  tl.from(lines, 1, {
+    yPercent: 100,
+    ease: Power4.out,
+    stagger: 0.2,
+    delay: 0,
+  });
+});
+
 //Dropdown Lists
 var blocks = document.querySelectorAll(".info-block");
 
